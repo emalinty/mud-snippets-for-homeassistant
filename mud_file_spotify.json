@@ -1,0 +1,111 @@
+{
+    "ietf-mud:mud": {
+        "mud-version": 1,
+        "cache-validity": 24,
+        "is-supported": true,
+        "from-device-policy": {
+            "access-lists": {
+                "access-list": [
+                    {
+                        "name": "spotify-mud-from"
+                    }
+                ]
+            }
+        },
+        "to-device-policy": {
+            "access-lists": {
+                "access-list": [
+                    {
+                        "name": "spotify-mud-to"
+                    }
+                ]
+            }
+        }
+    },
+    "ietf-access-control-list:acls": {
+        "acl": [
+            {
+                "name": "spotify-mud-to",
+                "type": "ipv4-acl-type",
+                "aces": {
+                    "ace": [
+                        {
+                            "name": "spotify-cl0-to",
+                            "matches": {
+                                "ipv4": {
+                                    "ietf-acldns:src-dnsname": "api.spotify.com"
+                                }
+                            },
+                            "actions": {
+                                "forwarding": "accept"
+                            }
+                        },
+                        {
+                            "name": "spotify-cl1-to",
+                            "matches": {
+                                "ipv4": {
+                                    "ietf-acldns:src-dnsname": "open.spotify.com"
+                                }
+                            },
+                            "actions": {
+                                "forwarding": "accept"
+                            }
+                        },
+                        {
+                            "name": "spotify-cl2-to",
+                            "matches": {
+                                "ipv4": {
+                                    "ietf-acldns:src-dnsname": "accounts.spotify.com"
+                                }
+                            },
+                            "actions": {
+                                "forwarding": "accept"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "spotify-mud-from",
+                "type": "ipv4-acl-type",
+                "aces": {
+                    "ace": [
+                        {
+                            "name": "spotify-cl0-from",
+                            "matches": {
+                                "ipv4": {
+                                    "ietf-acldns:dst-dnsname": "api.spotify.com"
+                                }
+                            },
+                            "actions": {
+                                "forwarding": "accept"
+                            }
+                        },
+                        {
+                            "name": "spotify-cl1-from",
+                            "matches": {
+                                "ipv4": {
+                                    "ietf-acldns:dst-dnsname": "open.spotify.com"
+                                }
+                            },
+                            "actions": {
+                                "forwarding": "accept"
+                            }
+                        },
+                        {
+                            "name": "spotify-cl2-from",
+                            "matches": {
+                                "ipv4": {
+                                    "ietf-acldns:dst-dnsname": "accounts.spotify.com"
+                                }
+                            },
+                            "actions": {
+                                "forwarding": "accept"
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}
