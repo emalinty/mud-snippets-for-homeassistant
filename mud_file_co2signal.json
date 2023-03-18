@@ -44,7 +44,7 @@
                             "name": "co2signal-cl1-to",
                             "matches": {
                                 "ipv4": {
-                                    "ietf-acldns:src-dnsname": "co2signal.com"
+                                    "ietf-acldns:src-dnsname": "electricitymap.org"
                                 }
                             },
                             "actions": {
@@ -63,7 +63,7 @@
                             "name": "co2signal-cl0-from",
                             "matches": {
                                 "ipv4": {
-                                    "ietf-acldns:dst-dnsname": "electricitymap.org"
+                                    "ietf-acldns:dst-dnsname": "co2signal.com"
                                 }
                             },
                             "actions": {
@@ -74,7 +74,7 @@
                             "name": "co2signal-cl1-from",
                             "matches": {
                                 "ipv4": {
-                                    "ietf-acldns:src-dnsname": "electricitymap.org"
+                                    "ietf-acldns:dst-dnsname": "electricitymap.org"
                                 }
                             },
                             "actions": {
